@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Volunteer Counter Tabs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ccc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .tab-button.active {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .counter {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 180px;
+    }
+
+    #counter-1 {
+      background: #e06666;
+    }
+
+    #counter-2 {
+      background: #f6b26b;
+    }
+
+    #counter-3 {
+      background: #00ff00;
+    }
+
+    #counter-4 {
+      background: #4285f4;
+    }
+
+    #counter-5 {
+      background: #ff00ff;
+    }
+
+    #counter-6 {
+      background: #b1610e;
+    }
+
+    #counter-7 {
+      background: #9900ff;
+    }
+
+    #counter-8 {
+      background: #38761d;
+    }
+
+    #counter-9 {
+      background: #f79ff7;
+    }
+
+    #counter-10 {
+      background: #666666;
+    }
+
+    .label-input {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .count {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      font-size: 24px;
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .red {
+      background-color: #e74c3c;
+    }
+
+    .green {
+      background-color: #2ecc71;
+    }
+
+    .blue {
+      background-color: #3498db;
+    }
+
+    .orange {
+      background-color: #f39c12;
+    }
+
+    .purple {
+      background-color: #9b59b6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="showTab(1)">Volunteer 1</button>
+    <button class="tab-button" onclick="showTab(2)">Volunteer 2</button>
+    <button class="tab-button" onclick="showTab(3)">Volunteer 3</button>
+    <button class="tab-button" onclick="showTab(4)">Volunteer 4</button>
+    <button class="tab-button" onclick="showTab(5)">Volunteer 5</button>
+  </div>
+
+  <div id="tab1" class="tab-content active">
+    <div class="counter" id="counter-1">
+      <h3>Team 1</h3>
+      <div id="count1a" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count1a', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count1a', -1)">−</button>
+    </div>
+    <div class="counter" id="counter-2">
+      <h3>Team 2</h3>
+      <div id="count1b" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count1b', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count1b', -1)">−</button>
+    </div>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <div class="counter" id="counter-3">
+      <h3>Team 3</h3>
+      <div id="count2a" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2a', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2a', -1)">−</button>
+    </div>
+    <div class="counter" id="counter-4">
+      <h3>Team 4</h3>
+      <div id="count2b" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2b', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2b', -1)">−</button>
+    </div>
+  </div>
+
+  <!-- Empty tabs for future extension -->
+  <div id="tab3" class="tab-content">
+    <div class="counter" id="counter-5">
+      <h3>Team 5</h3>
+      <div id="count2a" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2a', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2a', -1)">−</button>
+    </div>
+    <div class="counter" id="counter-6">
+      <h3>Team 6</h3>
+      <div id="count2b" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2b', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2b', -1)">−</button>
+    </div>
+  </div>
+
+  <div id="tab4" class="tab-content">
+    <div class="counter" id="counter-7">
+      <h3>Team 7</h3>
+      <div id="count2a" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2a', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2a', -1)">−</button>
+    </div>
+    <div class="counter" id="counter-8">
+      <h3>Team 8</h3>
+      <div id="count2b" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2b', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2b', -1)">−</button>
+    </div>
+  </div>
+  <div id="tab5" class="tab-content">
+    <div class="counter" id="counter-9">
+      <h3>Team 9</h3>
+      <div id="count2a" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2a', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2a', -1)">−</button>
+    </div>
+    <div class="counter" id="counter-10">
+      <h3>Team 10</h3>
+      <div id="count2b" class="count">0</div>
+      <button class="btn green" onclick="changeCount('count2b', 1)">+</button>
+      <button class="btn red" onclick="changeCount('count2b', -1)">−</button>
+    </div>
+  </div>
+
+  <script>
+    function changeCount(id, amount) {
+      const el = document.getElementById(id);
+      let val = parseInt(el.textContent);
+      el.textContent = val + amount;
+    }
+
+    function showTab(tabNum) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById('tab' + tabNum).classList.add('active');
+      buttons[tabNum - 1].classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
